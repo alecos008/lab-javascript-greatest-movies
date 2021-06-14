@@ -18,7 +18,7 @@ function howManyMovies(moviesArr) {
     return 0
   } else {
     moviesArr.filter((movie) => {
-      if (movie.director === "Steven Spielberg" && movie.genre === "drama") {
+      if (movie.director === "Steven Spielberg" && movie.genre.includes("Drama")) {
        return counterOfMovies += 1;
       }
     })
@@ -29,10 +29,9 @@ function howManyMovies(moviesArr) {
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
 function scoresAverage(moviesArr) {
   const allMoviesScore = moviesArr.reduce((total, movie)=> {
-    return total + movie.score;
+    return total + movie.score / moviesArr.length;
   }, 0)
-  const allMoviesAverage = allMoviesScore / moviesArr.length;
-  return allMoviesAverage;
+ return allMoviesScore;
 }
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
