@@ -6,7 +6,7 @@ const movies = require("./data");
 // How could you "clean" a bit this array and make it unified (without duplicates)?
 function getAllDirectors(moviesArr) {
    const directorsArr = moviesArr.map((movie) => {
-    movie.director;
+   return movie.director;
   })
   return directorsArr;
 }
@@ -14,11 +14,15 @@ function getAllDirectors(moviesArr) {
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 function howManyMovies(moviesArr) {
   let counterOfMovies = 0;
-  moviesArr.filter((movie) => {
-    if (movie.director === "Steven Spielberg" && movie.genre === "drama") {
-      counterOfMovies += 1;
-    }
-  })
+  if (moviesArr.length === 0) {
+    return 0
+  } else {
+    moviesArr.filter((movie) => {
+      if (movie.director === "Steven Spielberg" && movie.genre === "drama") {
+       return counterOfMovies += 1;
+      }
+    })
+  }
   return counterOfMovies;
 }
 
